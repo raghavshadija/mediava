@@ -7,29 +7,35 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.media.MediaView?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <bottom>
       <VBox prefHeight="29.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox prefHeight="100.0" prefWidth="200.0">
+            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" text="Open">
+                  <Button mnemonicParsing="false" onAction="#handleButtonAction" text="Open">
                      <HBox.margin>
-                        <Insets left="20.0" />
+                        <Insets />
                      </HBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" text="Play">
+                  <Button mnemonicParsing="false" onAction="#playbutton" text="Play">
                      <HBox.margin>
-                        <Insets left="20.0" />
+                        <Insets />
                      </HBox.margin>
                   </Button>
+                  <Button mnemonicParsing="false" onAction="#pausebutton" text="Pause" />
+                  <Button mnemonicParsing="false" onAction="#stopbutton" text="Stop" />
+                  <Button mnemonicParsing="false" onAction="#forwardbutton" text="Forward" />
+                  <Button mnemonicParsing="false" onAction="#rewindbutton" text="Rewind" />
+                  <Button mnemonicParsing="false" onAction="#fasterbutton" text="2x" />
+                  <Button mnemonicParsing="false" onAction="#slowerbutton" text="0.5x" />
+                  <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#exitbutton" text="Exit" textAlignment="CENTER" />
                </children>
             </HBox>
          </children>
       </VBox>
    </bottom>
    <center>
-      <MediaView fitHeight="300.0" fitWidth="500.0" BorderPane.alignment="CENTER" />
+      <MediaView fx:id="mediaView" fitHeight="300.0" fitWidth="500.0" BorderPane.alignment="CENTER" />
    </center>
 </BorderPane>
